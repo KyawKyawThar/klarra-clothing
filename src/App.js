@@ -1,16 +1,16 @@
 import './App.css';
 import { Route, Switch } from 'react-router-dom';
-import HomePage from './components/pages/homepage/homepage';
+import HomePage from './components/pages/homepage/home';
+import ShopPage from './components/pages/shoppage/shop';
+import SignInAndSignOut from './components/pages/sign-in and sign-out page/sig-in and sign-out';
 
-const HatPage = () => {
-  return <h1>Hello From the Hat</h1>;
-};
 function App() {
   return (
     <div className='App'>
       <Switch>
-        <HomePage exact path='/' component={HomePage} />
-        <Route exact path='/hats' component={HatPage}></Route>
+        <Route exact path='/' component={HomePage} />
+        <Route exact path='/shop' component={ShopPage} />
+        <Route exact path='/sigin' component={SignInAndSignOut} />
       </Switch>
     </div>
   );

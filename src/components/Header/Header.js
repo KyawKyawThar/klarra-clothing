@@ -33,6 +33,7 @@ const Header = ({ currentUser }) => {
 };
 
 const mapStateToProps = (state) => {
-  return { currentUser: state.user.currentUser };
+  //console.log(state);
+  return { currentUser: state.user.currentUser }; //user ka combine reducer ka user
 };
 export default connect(mapStateToProps)(Header);

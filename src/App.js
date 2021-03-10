@@ -23,7 +23,6 @@ class App extends React.Component {
             id: snapshop.id,
             ...snapshop.data(),
           });
-          console.log(this.state);
         });
       }
       setCurrentUser(userAuth);
@@ -58,7 +57,7 @@ class App extends React.Component {
 }
 
 const mapStateToProps = ({ user }) => {
-  console.log(user); //console ka currentUser ko U.user Reducer ka currentUser
+  //console ka currentUser ko U.user Reducer ka currentUser
   return {
     currentUser: user.currentUser,
   };

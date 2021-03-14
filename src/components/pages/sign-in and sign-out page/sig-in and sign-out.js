@@ -5,7 +5,7 @@ import './sign-in-and-sign-out.scss';
 
 const SignInAndSignOut = () => {
   return (
-    <div className='sign-in-and-sign-out'>
+    <div className='sign-in-and-sign-up'>
       <SignIn />
       <SignUp />
     </div>

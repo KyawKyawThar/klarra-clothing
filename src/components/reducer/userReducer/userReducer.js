@@ -16,8 +16,4 @@ const userReducer = (state = INITIAL_STATE, action) => {
   }
 };
 
-// export default combineReducers({
-//   user: userReducer,
-// });
-
 export default userReducer;

@@ -6,6 +6,9 @@ import { auth } from '../../firebase/firebase.utils';
 import { ReactComponent as Logo } from '../../assets/crown.svg';
 import CardIcon from '../cards-icon/card-icon';
 import CartDropDown from '../cart-dropdown/cart-dropdown';
+import { createStructuredSelector } from 'reselect';
+import { selectCurrentUser } from '../reducer/userReducer/userSelector';
+import { selectCartHidden } from '../reducer/cart/cartSelector';
 
 const Header = ({ currentUser, hidden }) => {
   return (
@@ -36,7 +39,9 @@ const Header = ({ currentUser, hidden }) => {
   );
 };
 
-const mapStateToProps = ({ user: { currentUser }, cart: { hidden } }) => {
-  return { currentUser, hidden }; //user ka combine reducer ka user
-};
+const mapStateToProps = createStructuredSelector({
+  currentUser: selectCurrentUser,
+  hidden: selectCartHidden,
+});
+
 export default connect(mapStateToProps)(Header);

@@ -7,8 +7,12 @@ import HomePage from './components/pages/homepage/home';
 import ShopPage from './components/pages/shoppage/shop';
 import SignInAndSignOut from './components/pages/sign-in and sign-out page/sig-in and sign-out';
 import Header from './components/Header/Header';
+
 import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 import { setCurrentUser } from './components/reducer/userReducer/userAction';
+import { createStructuredSelector } from 'reselect';
+import { selectCurrentUser } from './components/reducer/userReducer/userSelector';
+import CheckOut from './components/pages/checkoutPage/checkout';
 
 class App extends React.Component {
   unsubscribeFromAuth = null;
@@ -39,6 +43,7 @@ class App extends React.Component {
         <Switch>
           <Route exact path='/' component={HomePage} />
           <Route exact path='/shop' component={ShopPage} />
+          <Route exact path='/checkout' component={CheckOut} />
           <Route
             exact
             path='/signin'
@@ -56,12 +61,15 @@ class App extends React.Component {
   }
 }
 
-const mapStateToProps = ({ user }) => {
-  //console ka currentUser ko U.user Reducer ka currentUser
-  return {
-    currentUser: user.currentUser,
-  };
-};
+const mapStateToProps = createStructuredSelector({
+  currentUser: selectCurrentUser,
+});
+// const mapStateToProps = ({ user }) => {
+//   //console ka currentUser ko U.user Reducer ka currentUser
+//   return {
+//     currentUser: user.currentUser,
+//   };
+// };
 
 const mapDispatchToProps = (dispatch) => {
   return {

@@ -6,16 +6,14 @@ const CustomButton = ({
   invented,
   isGoogleSignin,
   ...otherProps
-}) => {
-  return (
-    <button
-      className={`${invented ? 'inverted' : ''}   ${
-        isGoogleSignin ? 'google-sign-in ' : ''
-      } custom-button`}
-      {...otherProps}>
-      {children}
-    </button>
-  );
-};
+}) => (
+  <button
+    className={`${invented ? 'inverted' : ''} ${
+      isGoogleSignin ? 'google-sign-in' : ''
+    } custom-button`}
+    {...otherProps}>
+    {children}
+  </button>
+);
 
 export default CustomButton;

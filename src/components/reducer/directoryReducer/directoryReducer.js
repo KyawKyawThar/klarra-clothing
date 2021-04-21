@@ -38,9 +38,10 @@ export const INITIAL_STATE = {
   ],
 };
 
-export const directoryReducer = (state = INITIAL_STATE, action) => {
+const directoryReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     default:
       return state;
   }
 };
+export default directoryReducer;

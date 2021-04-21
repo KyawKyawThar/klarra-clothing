@@ -12,6 +12,7 @@ import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 import { setCurrentUser } from './components/reducer/userReducer/userAction';
 import { createStructuredSelector } from 'reselect';
 import { selectCurrentUser } from './components/reducer/userReducer/userSelector';
+
 import CheckOut from './components/pages/checkoutPage/checkout';
 
 class App extends React.Component {

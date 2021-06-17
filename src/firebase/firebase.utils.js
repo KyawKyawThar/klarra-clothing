@@ -38,6 +38,21 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
   return userRef;
 };
 
+//Moving shop data into firebase
+
+export const addCollectionsAndDocument = async (
+  collectionsKey,
+  ObjectToAdd
+) => {
+  const collectionRef = firestore.collection(collectionsKey);
+  const batch = firestore.batch();
+  ObjectToAdd.forEach((obj) => {
+    const newDocRef = collectionRef.doc();
+    batch.set(newDocRef, obj);
+  });
+  return await batch.commit();
+};
+
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();
 

@@ -4,10 +4,10 @@ import './collection.component.scss';
 import { connect } from 'react-redux';
 import { selectCollection } from '../../reducer/shopReducer/shopSelector';
 
-const CollectionPage = ({ collections }) => {
-  console.log(collections);
+const CollectionPage = ({ collection }) => {
+  console.log(collection);
 
-  const { title, items } = collections;
+  const { title, items } = collection;
   return (
     <div className='collection-page'>
       <h2 className='title'>{title}</h2>
@@ -24,12 +24,9 @@ const CollectionPage = ({ collections }) => {
   );
 };
 
-const mapStateToProps = (state, ownProps) => {
-  return {
-    collections: selectCollection(ownProps.match.params.collectionId)(state),
-  };
-};
-
+const mapStateToProps = (state, ownProps) => ({
+  collection: selectCollection(ownProps.match.params.collectionId)(state),
+});
 //state ka overall reducer state,ownProps which is the props of the components that we're wrapping in our connect
 
 export default connect(mapStateToProps)(CollectionPage);

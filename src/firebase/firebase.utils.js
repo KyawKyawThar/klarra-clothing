@@ -66,6 +66,8 @@ export const converCollectionSnapshotToMap = (collections) => {
       items,
     };
   });
+
+  //Add shop data to redux
   return transformCollections.reduce((accumulator, collection) => {
     accumulator[collection.title.toLowerCase()] = collection;
     return accumulator;

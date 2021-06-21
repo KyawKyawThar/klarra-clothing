@@ -27,6 +27,7 @@ const CollectionItems = ({ item, addItem }) => {
 };
 
 const mapStateToDispatch = (dispatch) => ({
+
   addItem: (item) => dispatch(addItem(item)),
 });
 
